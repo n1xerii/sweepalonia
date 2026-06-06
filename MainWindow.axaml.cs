@@ -353,7 +353,7 @@ public partial class MainWindow : Window
             }
         }
     }
-    // LOSE
+    // LOSS
     private void GameOver()
     {
         lostGame = true;
