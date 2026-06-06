@@ -229,13 +229,13 @@ public partial class MainWindow : Window
     }
 
     // MINES
-    private void MakeMines(int mRows, int mCols, int amountOfBombs, int clickedRow, int clickedColumn)
+    private void MakeMines(int mRows, int mCols, int amountOfMines, int clickedRow, int clickedColumn)
     {
         mines = new bool[mRows, mCols];
         Random rng = new Random();
         
         int placed = 0;
-        while (placed < amountOfBombs)
+        while (placed < amountOfMines)
         {
             int row = rng.Next(Rows);
             int col = rng.Next(Columns);
@@ -304,7 +304,7 @@ public partial class MainWindow : Window
         
         var (r, c) = ((int, int))button.Tag;
         
-        if (firstClick) // Generate bombs after first click
+        if (firstClick) // Generate mines after first click
         {
             MakeMines(Rows, Columns,  MineCount, r, c);
             firstClick = false;
@@ -319,7 +319,7 @@ public partial class MainWindow : Window
             return;
         
         var (r, c) = ((int, int))button.Tag;
-        
+
         FlagCell(r, c);
     }
     
