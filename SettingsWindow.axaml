@@ -11,7 +11,7 @@
                  HorizontalAlignment="Center"/>
         <TextBox x:Name="ColumnBox" PlaceholderText="Column amount" Background="SlateGray"
                  HorizontalAlignment="Center"/>
-        <TextBox x:Name="MineBox" PlaceholderText="Mine percentage, defaults to 12% of cells" Background="SlateGray"
+        <TextBox x:Name="MineBox" PlaceholderText="Mine percentage, defaults to 12% of cells(0.12)" Background="SlateGray"
                  HorizontalAlignment="Center"/>
         <Button Content="- Start Custom Game -" Background="SlateGray"
                 HorizontalAlignment="Center"
