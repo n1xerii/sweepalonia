@@ -117,6 +117,8 @@ public partial class MainWindow : Window
         Columns = amountOfCols;
         MineCount = amountOfMines;
 
+        if (MineCount >= Rows * Columns) { MineCount -= 1; }    // Prevent all cells from being mines
+
         if (timer != null) EndGameTimer();
         winConditionCount = 0;
         wonGame = false;
