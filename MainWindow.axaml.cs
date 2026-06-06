@@ -340,11 +340,9 @@ public partial class MainWindow : Window
             foreach (Cell cell in cells)
             {
                 if (cell.isMine) continue;
-
+                
                 cell.myBtn.Click -= Cell_Click;
-                cell.myBtn.Click += null;
-
-                cell.myBtn.Background = Brushes.Green;
+                cell.myBtn.Background = Brushes.DarkGreen;
             }
             foreach (Cell cell in cells)
             {
@@ -369,8 +367,6 @@ public partial class MainWindow : Window
             if (cell.isMine) continue;
 
             cell.myBtn.Click -= Cell_Click;
-            cell.myBtn.Click += null;
-
             cell.myBtn.Background = Brushes.DarkSlateGray;
         }
         foreach (Cell cell in cells)
