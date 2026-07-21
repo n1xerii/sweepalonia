@@ -384,6 +384,8 @@ public partial class MainWindow : Window
     // TIMER
     public void StartGameTimer()
     {
+        timeItem.Header = "0";
+
         timer = new DispatcherTimer
         {
             Interval = TimeSpan.FromSeconds(1)
@@ -401,7 +403,6 @@ public partial class MainWindow : Window
     {
         timer?.Stop();
         seconds = 0;
-        timeItem.Header = "0";
     }
     
     // TOP MENU
