@@ -1,8 +1,8 @@
 using System;
-using System.Timers;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Media;
+using Avalonia.Threading;
 
 namespace minesweepy;
 
@@ -57,14 +57,16 @@ public partial class MainWindow : Window
     public readonly double impossibleMinePercentage = 0.30;
     
     // TIMER
-    private Timer timer;
+    private DispatcherTimer? timer;
     private int seconds = 0;
+    private MenuItem timeItem;
 
     public MainWindow()
     {
         InitializeComponent();
         
         settings = new SettingsWindow(this);
+        timeItem = TimeItem;
         NewGame(10,10, defaultMinePercentage);
     }
     
@@ -382,20 +384,24 @@ public partial class MainWindow : Window
     // TIMER
     public void StartGameTimer()
     {
-        timer = new Timer(1000);
-        timer.Elapsed += OnTimerElapsed;
-        timer.AutoReset = true;
+        timer = new DispatcherTimer
+        {
+            Interval = TimeSpan.FromSeconds(1)
+        };
+
+        timer.Tick += (_, _) =>
+        {
+            seconds++;
+            timeItem.Header = seconds.ToString();
+        };
+
         timer.Start();
     }
     private void EndGameTimer()
     {
-        timer.Stop(); 
+        timer?.Stop();
         seconds = 0;
-    }
-    private void OnTimerElapsed(object sender, ElapsedEventArgs e)
-    {
-        seconds++;
-        Console.WriteLine("*** Time: " + seconds + " ***");
+        timeItem.Header = "0";
     }
     
     // TOP MENU
