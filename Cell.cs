@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace minesweepy;
+namespace sweepalonia;
 
 public class Cell
 {

@@ -4,7 +4,7 @@ using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Threading;
 
-namespace minesweepy;
+namespace sweepalonia;
 
 public partial class MainWindow : Window
 {

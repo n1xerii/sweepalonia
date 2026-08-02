@@ -2,7 +2,7 @@ using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
-namespace minesweepy;
+namespace sweepalonia;
 
 public partial class SettingsWindow : Window
 {
