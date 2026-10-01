@@ -1,5 +1,5 @@
-# SWEEPALONIA
- ## Avalonia UI Minesweeper🧹
+# 🧹 - SWEEPALONIA - 
+Avalonia UI Minesweeper
 
 ## HOW TO RUN
 
