@@ -1,4 +1,4 @@
-# - 💣 SWEEPALONIA - 
+# - 💣 **SWEEPALONIA** - 
 - Avalonia UI Minesweeper 
 
 ## HOW TO RUN 
